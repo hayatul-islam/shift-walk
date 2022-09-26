@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
@@ -6,7 +7,7 @@ function Header() {
 
   return (
     <>
-      <div className="grid grid-cols-3 px-6 py-4">
+      <div className="grid grid-cols-3 ">
         <div className="text-[120px] font-medium">
           <NavLink
             className={({ isActive }) =>
@@ -36,13 +37,13 @@ function Header() {
         </div>
         <div className="text-end">
           <div className="space-x-4">
-            <a
+            <motion.a
               className="underline text-[24px] font-medium"
               href="/"
               target="_blank"
             >
               Instagram
-            </a>
+            </motion.a>
             <button className="underline text-[24px] font-medium">Email</button>
           </div>
         </div>
