@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import BioContent from "./BioContent";
 import BioData from "./BioData";
 
 const isaacPowell = {
-  role: "",
-  selected: "",
-  stack: "",
+  role: "Art Director + Designer",
+  selected: "Paul Smith, Pitch, Jason O'Rear, PRB",
+  awards: 16,
 };
 const samGoddard = {
   role: "Createtive Developer",
@@ -15,10 +15,14 @@ const samGoddard = {
 };
 
 function Bio() {
+  const [showData, setShowData] = useState("");
   return (
     <>
-      <BioData data={samGoddard} />
-      <BioContent />
+      <div className="h-[280px] w-[60%] ml-auto">
+        {showData === "sam" && <BioData data={samGoddard} />}
+        {showData === "powell" && <BioData data={isaacPowell} />}
+      </div>
+      <BioContent setShowData={setShowData} />
     </>
   );
 }
