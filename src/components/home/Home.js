@@ -1,11 +1,11 @@
 import React from "react";
 import Bio from "./Bio";
 
-function Home() {
+function Home({ theme }) {
   return (
     <>
       <div className="px-6">
-        <Bio />
+        <Bio theme={theme} />
       </div>
     </>
   );

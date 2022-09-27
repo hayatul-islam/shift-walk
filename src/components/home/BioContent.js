@@ -1,10 +1,14 @@
 import React from "react";
 
-function BioContent({ setShowData }) {
+function BioContent({ setShowData, theme }) {
   return (
     <>
       <div className="grid items-end h-[70vh] md:h-full">
-        <div className="flex justify-between text-[18px] md:text-[20px] xl:text-[24px] font-medium text-[#242b2d]">
+        <div
+          className={`flex justify-between text-[18px] md:text-[20px] xl:text-[24px] font-medium  text-${
+            theme === "light" ? "[#242b2d]" : "[#abaea8]"
+          } `}
+        >
           <div>
             <p className="max-w-[500px] xl:max-w-[740px]  leading-7 gapeworms">
               &nbsp;&nbsp;&nbsp;&nbsp;The mini-studio of{" "}

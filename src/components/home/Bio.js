@@ -14,15 +14,15 @@ const samGoddard = {
   awards: 32,
 };
 
-function Bio() {
+function Bio({ theme }) {
   const [showData, setShowData] = useState("");
   return (
     <>
       <div className="md:block hidden md:h-[280px] w-[80%] xl:w-[60%] ml-auto">
-        {showData === "sam" && <BioData data={samGoddard} />}
-        {showData === "powell" && <BioData data={isaacPowell} />}
+        {showData === "sam" && <BioData theme={theme} data={samGoddard} />}
+        {showData === "powell" && <BioData theme={theme} data={isaacPowell} />}
       </div>
-      <BioContent setShowData={setShowData} />
+      <BioContent theme={theme} setShowData={setShowData} />
     </>
   );
 }
