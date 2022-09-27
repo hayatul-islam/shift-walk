@@ -4,7 +4,7 @@ function BioData({ data }) {
   const { role, selected, stack, awards } = data || {};
   return (
     <>
-      <div className=" text-[24px] font-medium text-[#242b2d] pt-2  z-50">
+      <div className="text-[20px] xl:text-[24px] font-medium text-[#242b2d] pt-2  z-50">
         <div>
           <div className="flex justify-between border-b border-t border-[#242b2d] py-1">
             <h4>Role</h4>

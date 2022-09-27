@@ -6,7 +6,7 @@ import Works from "./components/works/Works";
 function App() {
   return (
     <>
-      <div className="bg-[#abaea8] min-h-screen relative py-4 px-6 ">
+      <div className="bg-[#abaea8] min-h-screen relative py-4 px-2 lg:px-6 ">
         <BrowserRouter>
           <Header />
           <Routes>

@@ -18,7 +18,7 @@ function Bio() {
   const [showData, setShowData] = useState("");
   return (
     <>
-      <div className="h-[280px] w-[60%] ml-auto">
+      <div className="md:block hidden md:h-[280px] w-[80%] xl:w-[60%] ml-auto">
         {showData === "sam" && <BioData data={samGoddard} />}
         {showData === "powell" && <BioData data={isaacPowell} />}
       </div>
