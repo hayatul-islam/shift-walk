@@ -18,7 +18,9 @@ function Header({ theme }) {
                 ? `block leading-none text-${
                     theme === "light" ? "[#242b2d]" : "[#abaea8]"
                   }`
-                : `block text-[#313939] leading-none hover:text-${
+                : `block text-${
+                    theme === "light" ? "[#9ea09c]" : "[#313939]"
+                  }  leading-none hover:text-${
                     theme === "light" ? "[#242b2d]" : "[#abaea8]"
                   }`
             }
@@ -32,7 +34,9 @@ function Header({ theme }) {
                 ? `block leading-none text-${
                     theme === "light" ? "[#242b2d]" : "[#abaea8]"
                   }`
-                : `block text-[#313939] leading-none hover:text-${
+                : `block text-${
+                    theme === "light" ? "[#9ea09c]" : "[#313939]"
+                  } leading-none hover:text-${
                     theme === "light" ? "[#242b2d]" : "[#abaea8]"
                   }`
             }
