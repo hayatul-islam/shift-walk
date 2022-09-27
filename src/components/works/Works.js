@@ -56,12 +56,12 @@ function Works() {
   const [show, setShow] = useState(false);
   return (
     <>
-      <div className="h-[60vh] grid items-end">
+      <div className="h-[90vh] md:h-[60vh] grid items-end">
         <div>
-          <div className="grid grid-cols-[30%_45%_15%_10%] border-b border-[#242b2d] py-3 text-[10px] text-[#242b2d] uppercase font-medium">
+          <div className="flex justify-between md:grid md:grid-cols-[25%_50%_10%_10%] xl:grid-cols-[30%_45%_15%_10%] border-b border-[#242b2d] py-3 text-[10px] text-[#242b2d] uppercase font-medium">
             <p>Client</p>
-            <p>Overview</p>
-            <p>Agency</p>
+            <p className="hidden md:block">Overview</p>
+            <p className="hidden md:block">Agency</p>
             <p className="text-end">Launch</p>
           </div>
           {datas?.map((data) => (
