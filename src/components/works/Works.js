@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Work from "./Work";
 // fake data
 const datas = [
@@ -53,6 +53,7 @@ const datas = [
 ];
 
 function Works() {
+  const [show, setShow] = useState(false);
   return (
     <>
       <div className="h-[60vh] grid items-end">
@@ -64,7 +65,7 @@ function Works() {
             <p className="text-end">Launch</p>
           </div>
           {datas?.map((data) => (
-            <Work key={data?.id} data={data} />
+            <Work key={data?.id} data={data} show={show} setShow={setShow} />
           ))}
         </div>
       </div>

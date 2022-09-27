@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
 function Header() {
   const { pathname } = useLocation();
-  const [show, setShow] = useState(false);
 
   return (
     <>
