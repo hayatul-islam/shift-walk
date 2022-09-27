@@ -35,7 +35,7 @@ function Header() {
         </div>
         <div className="hidden md:block text-center">
           <h2 className="text-[24px] text-[#242b2d] font-medium">
-            Selected Works
+            {pathname === "/works" ? "Selected Works" : "Design + Build Studio"}
           </h2>
         </div>
         <div className="text-end">
