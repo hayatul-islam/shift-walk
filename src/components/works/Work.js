@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 
-function Work({ data }) {
+function Work({ data, theme }) {
   const [show, setShow] = useState(false);
   console.log(show);
   const { client, agency, overview, role, link } = data || {};
@@ -15,7 +15,9 @@ function Work({ data }) {
         onClick={handleLink}
         onMouseEnter={() => setShow(true)}
         onMouseLeave={() => setShow(false)}
-        className="flex justify-between md:grid md:grid-cols-[25%_50%_10%_10%] xl:grid-cols-[30%_45%_15%_10%] border-b  border-[#242b2d] py-1 text-[28px] md:text-[16px] lg:text-[24px] font-medium text-[#242b2d] cursor-pointer items-center"
+        className={`flex justify-between md:grid md:grid-cols-[25%_50%_10%_10%] xl:grid-cols-[30%_45%_15%_10%] border-b py-1 text-[28px] md:text-[16px] lg:text-[24px] font-medium cursor-pointer items-center text-${
+          theme === "light" ? "[#242b2d]" : "[#abaea8]"
+        } border-${theme === "light" ? "[#242b2d]" : "[#abaea8]"} `}
       >
         <motion.div>
           <h4>{show ? "Launch Project" : client}</h4>

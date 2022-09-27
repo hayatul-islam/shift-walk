@@ -29,7 +29,7 @@ function App() {
           <Header theme={theme} />
           <Routes>
             <Route path="/" element={<Home theme={theme} />} />{" "}
-            <Route path="/works" element={<Works />} />{" "}
+            <Route path="/works" element={<Works theme={theme} />} />{" "}
           </Routes>
         </BrowserRouter>
         <div className="absolute translate-x-[50%] translate-y-[-50%] opacity-80 top-[50%] right-[50%] ">
