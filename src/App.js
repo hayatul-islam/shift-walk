@@ -26,7 +26,7 @@ function App() {
         } min-h-screen relative py-4 px-2 lg:px-6 `}
       >
         <BrowserRouter>
-          <Header />
+          <Header theme={theme} />
           <Routes>
             <Route path="/" element={<Home theme={theme} />} />{" "}
             <Route path="/works" element={<Works />} />{" "}

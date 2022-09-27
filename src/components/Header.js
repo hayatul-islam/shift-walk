@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
-function Header() {
+function Header({ theme }) {
   const { pathname } = useLocation();
   const handleEmail = () => {
     window.open("mailto:hello@gmail.com?subject=&body=");
@@ -15,8 +15,12 @@ function Header() {
           <NavLink
             className={({ isActive }) =>
               isActive && pathname === "/"
-                ? "block leading-none text-[#242b2d]"
-                : "block text-[#9ea09c] leading-none hover:text-[#242b2d]"
+                ? `block leading-none text-${
+                    theme === "light" ? "[#242b2d]" : "[#abaea8]"
+                  }`
+                : `block text-[#313939] leading-none hover:text-${
+                    theme === "light" ? "[#242b2d]" : "[#abaea8]"
+                  }`
             }
             to="/"
           >
@@ -25,8 +29,12 @@ function Header() {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "block leading-none text-[#242b2d]"
-                : "block text-[#9ea09c] leading-none hover:text-[#242b2d]"
+                ? `block leading-none text-${
+                    theme === "light" ? "[#242b2d]" : "[#abaea8]"
+                  }`
+                : `block text-[#313939] leading-none hover:text-${
+                    theme === "light" ? "[#242b2d]" : "[#abaea8]"
+                  }`
             }
             to="/works"
           >
@@ -34,11 +42,19 @@ function Header() {
           </NavLink>
         </div>
         <div className="hidden md:block text-center">
-          <h2 className="text-[24px] text-[#242b2d] font-medium">
+          <h2
+            className={`text-[24px] text-${
+              theme === "light" ? "[#242b2d]" : "[#abaea8]"
+            } font-medium`}
+          >
             {pathname === "/works" ? "Selected Works" : "Design + Build Studio"}
           </h2>
         </div>
-        <div className="text-end">
+        <div
+          className={`text-end text-${
+            theme === "light" ? "[#242b2d]" : "[#abaea8]"
+          }`}
+        >
           <div className="space-x-4 text-[18px] sm:text-[20px] lg:text-[24px]">
             <motion.a
               className="underline font-medium"
