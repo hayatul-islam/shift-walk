@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
 function Header() {
   const { pathname } = useLocation();
+  const [show, setShow] = useState(false);
 
   return (
     <>
@@ -36,7 +37,7 @@ function Header() {
           </h2>
         </div>
         <div className="text-end">
-          <div className="space-x-4">
+          <div className="space-x-4 ">
             <motion.a
               className="underline text-[24px] font-medium"
               href="/"
@@ -44,7 +45,9 @@ function Header() {
             >
               Instagram
             </motion.a>
-            <button className="underline text-[24px] font-medium">Email</button>
+            <motion.button className={`underline text-[24px] font-medium `}>
+              Email
+            </motion.button>
           </div>
         </div>
       </div>
