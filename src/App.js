@@ -36,7 +36,7 @@ function App() {
           <h4
             onClick={() => setIsDark(!isDark)}
             className={`text-[42px] text-${
-              theme === "light" ? "[#9ea09c]" : "[#abaea8]"
+              theme === "light" ? "[#9ea09c]" : "[#313939]"
             } font-medium cursor-pointer`}
           >
             _ShiftWalk<sup>TM</sup>
