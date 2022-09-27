@@ -15,12 +15,12 @@ function Work({ data }) {
         onClick={handleLink}
         onMouseEnter={() => setShow(true)}
         onMouseLeave={() => setShow(false)}
-        className="grid grid-cols-[30%_45%_15%_10%] border-b  border-[#242b2d] py-1 text-[24px] font-medium text-[#242b2d] cursor-pointer items-center"
+        className="flex justify-between md:grid md:grid-cols-[30%_45%_15%_10%] border-b  border-[#242b2d] py-1 text-[24px] font-medium text-[#242b2d] cursor-pointer items-center"
       >
         <motion.div>
           <h4>{show ? "Launch Project" : client}</h4>
         </motion.div>
-        <div>
+        <div className="hidden md:block">
           {show ? (
             <div className="w-[500px]">
               <marquee>
@@ -35,7 +35,7 @@ function Work({ data }) {
             <h4>{overview}</h4>
           )}
         </div>
-        <div>
+        <div className="hidden md:block">
           <h4>{agency !== "" ? agency : "-"}</h4>
         </div>
         <div className="flex justify-end">
