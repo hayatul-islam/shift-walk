@@ -50,7 +50,7 @@ function Header({ theme }) {
                       theme === "light" ? "[#9ea09c]" : "[#313939]"
                     } leading-none hover:text-${
                       theme === "light" ? "[#242b2d]" : "[#abaea8]"
-                    }`
+                    } `
               }
               to="/works"
             >
@@ -93,7 +93,7 @@ function Header({ theme }) {
             </motion.a>
             <motion.button
               onClick={handleEmail}
-              className={`underline font-medium `}
+              className={`underline font-medium relative`}
             >
               Email
             </motion.button>
