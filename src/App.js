@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
@@ -28,7 +29,7 @@ function App() {
       <div
         className={`bg-${
           theme === "light" ? "[#abaea8]" : "[#242b2d]"
-        } min-h-screen relative py-4 px-2 lg:px-6 `}
+        } min-h-screen relative py-3 px-2 lg:px-4 `}
       >
         <BrowserRouter>
           <Header theme={theme} />
@@ -38,14 +39,14 @@ function App() {
           </Routes>
         </BrowserRouter>
         <div className="absolute translate-x-[50%] translate-y-[-50%] opacity-80 top-[50%] right-[50%] ">
-          <h4
+          <motion.h4
             onClick={handlerMode}
             className={`text-[42px] text-${
               theme === "light" ? "[#9ea09c]" : "[#313939]"
             } font-medium cursor-pointer`}
           >
             _ShiftWalk<sup>TM</sup>
-          </h4>
+          </motion.h4>
         </div>
       </div>
     </>
