@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
+import { contentVarients } from "../../utils/defaultVarients";
 
 function Work({ data, theme }) {
   const [show, setShow] = useState(false);
@@ -19,10 +20,19 @@ function Work({ data, theme }) {
           theme === "light" ? "[#242b2d]" : "[#abaea8]"
         } border-${theme === "light" ? "[#242b2d]" : "[#abaea8]"} `}
       >
-        <motion.div>
+        <motion.div
+          initial={contentVarients.initial}
+          animate={contentVarients?.animate}
+          transition={contentVarients?.transition}
+        >
           <h4>{show ? "Launch Project" : client}</h4>
         </motion.div>
-        <div className="hidden md:block">
+        <motion.div
+          initial={contentVarients.initial}
+          animate={contentVarients?.animate}
+          transition={contentVarients?.transition}
+          className="hidden md:block"
+        >
           {show ? (
             <div className="w-[500px]">
               <marquee>
@@ -36,18 +46,28 @@ function Work({ data, theme }) {
           ) : (
             <h4>{overview}</h4>
           )}
-        </div>
-        <div className="hidden md:block">
+        </motion.div>
+        <motion.div
+          initial={contentVarients.initial}
+          animate={contentVarients?.animate}
+          transition={contentVarients?.transition}
+          className="hidden md:block"
+        >
           <h4>{agency !== "" ? agency : "-"}</h4>
-        </div>
-        <div className="flex justify-end">
+        </motion.div>
+        <motion.div
+          initial={contentVarients.initial}
+          animate={contentVarients?.animate}
+          transition={contentVarients?.transition}
+          className="flex justify-end"
+        >
           <motion.div
             animate={{ rotate: show ? -40 : 0 }}
             transition={{ type: "spring" }}
           >
             <BsArrowRight />
           </motion.div>
-        </div>
+        </motion.div>
       </motion.div>
     </>
   );

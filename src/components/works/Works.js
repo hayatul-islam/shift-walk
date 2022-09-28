@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import React, { useState } from "react";
+import { contentVarients } from "../../utils/defaultVarients";
 import Work from "./Work";
 // fake data
 const datas = [
@@ -63,10 +65,37 @@ function Works({ theme }) {
               theme === "light" ? "[#242b2d]" : "[#abaea8]"
             } font-medium cursor-pointer`}
           >
-            <p>Client</p>
-            <p className="hidden md:block">Overview</p>
-            <p className="hidden md:block">Agency</p>
-            <p className="text-end">Launch</p>
+            <motion.p
+              initial={contentVarients.initial}
+              animate={contentVarients?.animate}
+              transition={contentVarients?.transition}
+            >
+              Client
+            </motion.p>
+            <motion.p
+              initial={contentVarients.initial}
+              animate={contentVarients?.animate}
+              transition={contentVarients?.transition}
+              className="hidden md:block"
+            >
+              Overview
+            </motion.p>
+            <motion.p
+              initial={contentVarients.initial}
+              animate={contentVarients?.animate}
+              transition={contentVarients?.transition}
+              className="hidden md:block"
+            >
+              Agency
+            </motion.p>
+            <motion.p
+              initial={contentVarients.initial}
+              animate={contentVarients?.animate}
+              transition={contentVarients?.transition}
+              className="text-end"
+            >
+              Launch
+            </motion.p>
           </div>
           {datas?.map((data) => (
             <Work
