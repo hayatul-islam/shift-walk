@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import React from "react";
+import { contentVarients } from "../../utils/defaultVarients";
 
 function BioContent({ setShowData, theme }) {
   return (
@@ -9,7 +11,11 @@ function BioContent({ setShowData, theme }) {
             theme === "light" ? "[#242b2d]" : "[#abaea8]"
           } `}
         >
-          <div>
+          <motion.div
+            initial={contentVarients.initial}
+            animate={contentVarients?.animate}
+            transition={contentVarients?.transition}
+          >
             <p className="max-w-[500px] xl:max-w-[740px]  leading-7 gapeworms">
               &nbsp;&nbsp;&nbsp;&nbsp;The mini-studio of{" "}
               <a
@@ -38,15 +44,20 @@ function BioContent({ setShowData, theme }) {
               sustainability, architectural, and creative arts sectors, but we
               always like to keep an open mind.
             </p>
-          </div>
-          <div className="hidden md:flex items-end ">
+          </motion.div>
+          <motion.div
+            initial={contentVarients.initial}
+            animate={contentVarients?.animate}
+            transition={contentVarients?.transition}
+            className="hidden md:flex items-end "
+          >
             <div className="group cursor-pointer">
               <h3 className="group-hover:block hidden">
                 Based in Nottingham, UK
               </h3>
               <h3 className="group-hover:hidden">WorldWide</h3>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>
