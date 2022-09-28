@@ -4,7 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 function Work({ data, theme }) {
   const [show, setShow] = useState(false);
-  console.log(show);
+  // console.log(show);
   const { client, agency, overview, role, link } = data || {};
   const handleLink = () => {
     window.open(link, "_blank");

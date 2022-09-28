@@ -5,17 +5,22 @@ import Home from "./components/home/Home";
 import Works from "./components/works/Works";
 
 function App() {
+  const currTheme = window.localStorage?.getItem("theme");
   const [isDark, setIsDark] = useState(false);
-  const [theme, setTheme] = useState("light");
-
-  useEffect(() => {
-    if (isDark) {
+  const [theme, setTheme] = useState(currTheme);
+  console.log(theme);
+  const handlerMode = () => {
+    if (theme === "light") {
       window.localStorage.setItem("theme", "dark");
     } else {
       window.localStorage.setItem("theme", "light");
     }
+    setIsDark(!isDark);
+  };
+  useEffect(() => {
     const currTheme = window.localStorage.getItem("theme");
-    setTheme(currTheme);
+    const theme = currTheme !== null ? currTheme : "light";
+    setTheme(theme);
   }, [isDark]);
 
   return (
@@ -34,7 +39,7 @@ function App() {
         </BrowserRouter>
         <div className="absolute translate-x-[50%] translate-y-[-50%] opacity-80 top-[50%] right-[50%] ">
           <h4
-            onClick={() => setIsDark(!isDark)}
+            onClick={handlerMode}
             className={`text-[42px] text-${
               theme === "light" ? "[#9ea09c]" : "[#313939]"
             } font-medium cursor-pointer`}
